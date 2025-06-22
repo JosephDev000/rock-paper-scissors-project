@@ -7,23 +7,27 @@ Go to round 2,3,4 and 5
 Display the winning msg for winner of game
 */
 
-// Game Scores
-let playerScore = 0;
+// Scores
+let humanScore = 0;
 let computerScore = 0;
 
+// Get & randomize computer choice
 
-let getHumanChoice = prompt("Choose 'Rock', 'Paper' or 'Scissors' to play the game!", );
+function getComputerChoice () {
+    let randomChoice = Math.floor(Math.random() * 3)
 
+     if (randomChoice === 0) {
+        return "paper"
+     } else if (randomChoice === 1) {
+        return "rock"
+     } else {
+        return "scissors"
+     }
 
-function getComputerChoice() {
-    let random = Math.floor(Math.random() * 3)
-    
-    if (random === 0) {
-        return "Paper";
-    } else if (random === 1) {
-        return "Rock";
-    } else {
-        return "Scissors";
-    }
 }
-    console.log(getComputerChoice());
+ //console.log(getComputerChoice());
+
+ // Get human choice from prompt
+function getHumanChoice() {
+
+}
