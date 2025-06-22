@@ -1,2 +1,2 @@
 # rock-paper-scissors-project
-Rock Paper Scissors game played on the browser
+A simple Rock, Paper Scissors game played on the browser/console, made with Javascript as part of the Odin Project.
