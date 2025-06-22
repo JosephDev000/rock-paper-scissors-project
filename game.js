@@ -34,8 +34,6 @@ function getHumanChoice() {
 
 // console.log(getHumanChoice());
 
-// Selections for playround
-
 // Play round code
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -80,6 +78,23 @@ function playRound(humanChoice, computerChoice) {
 }
 }
 
+function playGame() {
+        for (let i = 0; humanScore < 5 && computerScore < 5;  ++i) {
 
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+    
+            playRound(humanSelection, computerSelection);
+    } 
 
+    if (humanScore === 5) {
+        console.log("Congratulations! You won the game woohoo!");
+        console.log(`Final Score: You (${humanScore}) vs Computer (${computerScore})`);
+    } else if (computerScore === 5) {
+        console.log("Oh!! You lost the game :( Better luck next time!");
+        console.log(`Final Score: You (${humanScore}) vs Computer (${computerScore})`);
+    }
+}
+
+playGame();
 
