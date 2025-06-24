@@ -1,7 +1,6 @@
 // Scores
 let humanScore = 0;
 let computerScore = 0;
-// let gameRounds = 0;
 
 // Get & randomize computer choice
 
@@ -18,58 +17,51 @@ function getComputerChoice () {
 
 }
 
- // Get human choice from prompt
+ // Get human choice from prompt & turn to lower case to easily compare
 function getHumanChoice() {
     let answer = prompt("Choose 'Rock', 'Paper' or 'Scissors' to play the game! (5 Rounds)").toLowerCase();
     return answer;
 }
 
-// console.log(getHumanChoice());
 
-// Play round & outcomes code
+// Win/lose outcomes
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        //++gameRounds;
+
         console.log(`It's a TIE! You both chose ${humanChoice}, better luck next round!`);  
         console.log(`You (${humanScore}) - Computer (${computerScore})`)
 
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        //++gameRounds;
         ++humanScore;
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`)
         console.log(`You WON!, ${humanChoice} beats ${computerChoice}!`)
         console.log(`You (${humanScore}) - Computer (${computerScore})`)
 
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        //++gameRounds;
         ++computerScore;
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`)
         console.log(`Unforunately you lost, ${computerChoice} beats ${humanChoice}!`)
         console.log(`You (${humanScore}) - Computer (${computerScore})`)
 
     } else if (humanChoice === "rock" && computerChoice === "paper") {
-        //++gameRounds;
         ++computerScore;
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`)
         console.log(`Unforunately you lost, ${computerChoice} beats ${humanChoice}!`)
         console.log(`You (${humanScore}) - Computer (${computerScore})`)
 
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        //++gameRounds;
         ++humanScore;
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`)
         console.log(`You WON!, ${humanChoice} beats ${computerChoice}!`)
         console.log(`You (${humanScore}) - Computer (${computerScore})`)
 
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        //++gameRounds;
         ++humanScore;
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`)
         console.log(`You WON!, ${humanChoice} beats ${computerChoice}!`)
         console.log(`You (${humanScore}) - Computer (${computerScore})`)
         
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        //++gameRounds;
         ++computerScore;
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`)
         console.log(`Unforunately you lost, ${computerChoice} beats ${humanChoice}!`)
@@ -77,18 +69,15 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-// function to make only 5 rounds and decide the winner/loser based on score
+// Limit game to 5 rounds only and decide the winner based on scores
 function playGame() {
-        // for (let i = 0; gameRounds < 5; ++i) {
-        // Below is a better/simpler and cleaner version for the loop, rather than using the one above and adding ++gameRounds for each if statement (outcome)
         for (let gameRounds = 0; gameRounds < 5; ++gameRounds) {
 
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
-    
-            playRound(humanSelection, computerSelection);
-    } 
 
+        playRound(humanSelection, computerSelection);
+    } 
     if (humanScore > computerScore) {
         console.log("Congratulations! You won the game woohoo!");
         console.log(`Final Score: You (${humanScore}) vs Computer (${computerScore})`);
@@ -104,4 +93,3 @@ function playGame() {
 // runs the game
 
 playGame();
-
